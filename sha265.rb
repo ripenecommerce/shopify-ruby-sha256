@@ -225,26 +225,4 @@ end
 # Secret Key can be anything but must be consistent between this script and the frontend
 SECRET_KEY="thisisyoursupersecreykeystring"
 
-# Example
-#
-# Within a Shopify liquid template, use the sha256 string filter
-# (https://shopify.dev/docs/themes/liquid/reference/filters/string-filters#sha256)
-# to generate the SHA256 hash, being sure to include the SECRET_KEY as part
-# of the data.  The SECRET_KEY can be defined in the liquid template using {% assign %}
-# to prevent it from being exposed.
-#
-# Pass the generated hash as a product line item property (such as '_product_integrity')
-# so that it can be read by this Shopify script, and validate it using the same format used
-# to generate the hash on the frontend, passed to sha256() within this script.
-#
-# Therefore, if your hash from the frontend contains the variant ID, the secret key, and
-# the product price, the Shopify Script should check using something similar to:
-#
-# Input.cart.line_items.each do |line_item|
-#   SHA_HASH = sha256(line_item.variant.id.to_s + SECRET_KEY + line_item.final_price.to_s)
-#   if SHA_HASH == line_item.properties['_product_integrity']
-#     ...Integrity verified, do something
-#   end
-# end
-#
-# Output.cart = Input.cart
+# Append your code here to validate the hash
