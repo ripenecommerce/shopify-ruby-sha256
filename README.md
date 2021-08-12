@@ -19,7 +19,7 @@ The hash can then be generated within the liquid template:
 
 ```
     {% capture combined_data %}{{ currentProductVariantId }}{{ SECRET_KEY }}{{ product.price }}{% endcapture %}
-    {% assign prod_hmac = combined_data | strip | sha256 | prepend: "," %}
+    {% assign prod_hmac = combined_data | strip | sha256 %}
 ```
 
 Pass the resulting generated hash as a product line item property (such as '`_product_integrity`')
